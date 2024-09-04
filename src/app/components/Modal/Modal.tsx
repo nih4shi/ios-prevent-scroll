@@ -27,12 +27,13 @@ export default function Modal({
   }
 
   return (
-    <dialog
-      ref={modalRef}
-      onClick={closeModal}
-      className="mx-auto h-1/2 w-full rounded p-4 md:max-w-3xl"
-    >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+    <dialog ref={modalRef} onClick={closeModal} className="w-full">
+      <div
+        className="w-full rounded bg-white p-4 md:max-w-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
     </dialog>
   )
 }
