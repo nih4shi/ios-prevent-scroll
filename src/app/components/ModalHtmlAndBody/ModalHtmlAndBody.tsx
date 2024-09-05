@@ -15,16 +15,16 @@ export default function ModalHtmlAndBody() {
       document.body.style.overflow = 'hidden'
       modalRef.current?.showModal()
     } else {
-      document.documentElement.style.overflow = 'auto'
-      document.body.style.overflow = 'auto'
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
       modalRef.current?.close()
     }
   }, [isModalOpen])
 
   return (
-    <>
-      <h2 className="mb-2 mt-4">htmlタグとbodyにoverflow: hiddenを付与</h2>
-      <button className="rounded-lg bg-gray-700 p-2 text-white" onClick={openModal}>
+    <div>
+      <h2 className="mb-2 mt-4">&lt;html&gt;と&lt;body&gt;にoverflow: hiddenを付与</h2>
+      <button className="w-full rounded-lg bg-gray-700 p-2 text-white" onClick={openModal}>
         Open Modal
       </button>
       <dialog ref={modalRef} onClick={closeModal} className="w-full">
@@ -32,6 +32,6 @@ export default function ModalHtmlAndBody() {
           &lt;html&gt;と&lt;body&gt;にoverflow:hidden
         </div>
       </dialog>
-    </>
+    </div>
   )
 }
