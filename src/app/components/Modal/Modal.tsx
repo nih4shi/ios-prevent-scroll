@@ -1,0 +1,39 @@
+'use client'
+import { useRef, useEffect } from 'react'
+
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+}: {
+  isOpen: boolean
+  onClose(): void
+  children: React.ReactNode
+}) {
+  const modalRef = useRef<HTMLDialogElement>(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden' // iOS Safariの背面スクロールを止める
+      modalRef.current?.showModal()
+    } else {
+      modalRef.current?.close()
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
+
+  const closeModal = () => {
+    if (onClose) onClose()
+  }
+
+  return (
+    <dialog ref={modalRef} onClick={closeModal} className="w-full">
+      <div
+        className="w-full rounded bg-white p-4 md:max-w-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
+    </dialog>
+  )
+}
