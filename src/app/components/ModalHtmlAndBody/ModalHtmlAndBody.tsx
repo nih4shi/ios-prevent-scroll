@@ -23,13 +23,20 @@ export default function ModalHtmlAndBody() {
 
   return (
     <div>
-      <h2 className="mb-2 mt-4">&lt;html&gt;と&lt;body&gt;にoverflow: hiddenを付与</h2>
+      <h2 className="mb-2 mt-4">&lt;html&gt;と&lt;body&gt;にoverflow: hidden</h2>
       <button className="w-full rounded-lg bg-gray-700 p-2 text-white" onClick={openModal}>
         Open Modal
       </button>
-      <dialog ref={modalRef} onClick={closeModal} className="w-full">
-        <div className="w-full bg-white p-4 md:max-w-3xl" onClick={(e) => e.stopPropagation()}>
-          &lt;html&gt;と&lt;body&gt;にoverflow:hidden
+      <dialog ref={modalRef} onClick={closeModal} className="w-full rounded-lg">
+        <div className="w-full">
+          <div
+            className="h-52 overflow-y-scroll bg-white p-4 md:max-w-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {[...Array(20)].map((_, index) => (
+              <div key={index}>&lt;html&gt;と&lt;body&gt;にoverflow:hidden</div>
+            ))}
+          </div>
         </div>
       </dialog>
     </div>
