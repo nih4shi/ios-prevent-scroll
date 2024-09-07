@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body:has(dialog[open]) {
+/* body:has(dialog[open]) {
   overflow: hidden;
   scrollbar-gutter: stable;
-}
+}  */
