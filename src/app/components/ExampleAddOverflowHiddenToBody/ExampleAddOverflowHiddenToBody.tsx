@@ -6,8 +6,16 @@ import ModalCreatedByDialog from '../ModalCreatedByDialog'
 export default function ExampleAddOverflowHiddenToBody() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const openModal = () => setIsModalOpen(true)
-  const closeModal = () => setIsModalOpen(false)
+  const openModal = () => {
+    document.body.style.overflow = 'hidden'
+    document.body.style.scrollbarGutter = 'stable'
+    setIsModalOpen(true)
+  }
+  const closeModal = () => {
+    document.body.style.overflow = ''
+    document.body.style.scrollbarGutter = ''
+    setIsModalOpen(false)
+  }
 
   return (
     <div>
