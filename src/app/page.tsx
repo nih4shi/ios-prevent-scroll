@@ -1,21 +1,21 @@
-import ModalBody from './components/ModalBody'
-import ModalHtmlAndBody from './components/ModalHtmlAndBody'
-import ModalReactRemoveScroll from './components/ModalReactRemoveScroll'
+import ExampleAddOverflowHiddenToBody from './components/ExampleAddOverflowHiddenToBody'
+import ExampleAddOverflowHiddenToHtmlAndBody from './components/ExampleAddOverflowHiddenToHtmlAndBody'
+import ExampleReactRemoveScroll from './components/ExampleReactRemoveScroll'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-200 p-4">
-      <div className="mt-32">
+      <div className="text-center">
         {[...Array(50)].map((_, index) => (
           <div key={index}>↓</div>
         ))}
       </div>
-      <div className="flex flex-col gap-8 md:mx-auto md:max-w-3xl">
-        <ModalBody></ModalBody>
-        <ModalHtmlAndBody></ModalHtmlAndBody>
-        <ModalReactRemoveScroll></ModalReactRemoveScroll>
+      <div className="my-16 flex flex-col gap-8 md:mx-auto md:max-w-3xl">
+        <ExampleAddOverflowHiddenToBody></ExampleAddOverflowHiddenToBody>
+        <ExampleAddOverflowHiddenToHtmlAndBody></ExampleAddOverflowHiddenToHtmlAndBody>
+        <ExampleReactRemoveScroll></ExampleReactRemoveScroll>
       </div>
-      <div className="mt-32">
+      <div className="text-center">
         {[...Array(50)].map((_, index) => (
           <div key={index}>↑</div>
         ))}

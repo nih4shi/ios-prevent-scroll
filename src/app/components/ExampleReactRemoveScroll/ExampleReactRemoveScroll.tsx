@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { RemoveScroll } from 'react-remove-scroll'
 
-export default function ModalReactRemoveScroll() {
+export default function ExampleReactRemoveScroll() {
   const modalRef = useRef<HTMLDialogElement>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -25,9 +25,13 @@ export default function ModalReactRemoveScroll() {
         Open Modal
       </button>
       {isModalOpen && (
-        <RemoveScroll removeScrollBar={false} forwardProps noIsolation>
+        <RemoveScroll forwardProps noIsolation>
           <div className="scroll">
-            <dialog ref={modalRef} onClick={closeModal} className="w-full rounded-lg">
+            <dialog
+              ref={modalRef}
+              onClick={closeModal}
+              className="w-full rounded-lg backdrop:bg-black/70 md:max-w-3xl"
+            >
               <div className="w-full">
                 <div
                   className="h-52 overflow-y-scroll bg-white p-4 md:max-w-3xl"
