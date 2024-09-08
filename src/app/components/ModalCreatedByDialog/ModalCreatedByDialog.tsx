@@ -31,7 +31,7 @@ export default function ModalCreatedByDialog({
     <dialog
       ref={modalRef}
       onClick={handleClose}
-      className="w-full rounded-lg backdrop:bg-black/70 md:max-w-3xl"
+      className="mt-8 w-full rounded-lg backdrop:bg-black/70 md:max-w-3xl"
     >
       <div
         className="h-52 overflow-y-scroll bg-white p-4 md:max-w-3xl"
