@@ -8,10 +8,12 @@ export default function ExampleAddOverflowHiddenToBody() {
 
   const openModal = () => {
     document.body.style.overflow = 'hidden'
+    document.documentElement.style.scrollbarGutter = 'stable'
     setIsModalOpen(true)
   }
   const closeModal = () => {
     document.body.style.overflow = ''
+    document.documentElement.style.scrollbarGutter = ''
     setIsModalOpen(false)
   }
 
